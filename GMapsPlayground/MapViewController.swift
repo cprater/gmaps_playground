@@ -11,11 +11,7 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     // MARK: Properties
-    var place: Place! {
-        didSet {
-            updateView()
-        }
-    }
+    var place: Place! 
 
     override func viewDidLoad() {
         super.viewDidLoad()

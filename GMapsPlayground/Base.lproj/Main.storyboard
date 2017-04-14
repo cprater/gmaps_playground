@@ -65,7 +65,6 @@
                                 </state>
                                 <connections>
                                     <action selector="showMapView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TQY-4I-aFq"/>
-                                    <segue destination="TYP-XG-M23" kind="show" identifier="showMapDetail" action="showDetailViewController:sender:" id="lcU-CC-U2e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,33 +77,30 @@
                         <outlet property="latTextField" destination="hkG-9Y-8pY" id="rq2-k8-WFx"/>
                         <outlet property="longTextField" destination="pvI-IN-vHt" id="we1-Wc-xKr"/>
                         <outlet property="placeNameLabel" destination="hiR-kW-Fg1" id="6cF-Fq-SBK"/>
+                        <segue destination="tuP-ZX-4ga" kind="show" identifier="showMapDetail" id="cf3-Lo-9D8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4407.1999999999998" y="29.23538230884558"/>
+            <point key="canvasLocation" x="4247" y="28"/>
         </scene>
-        <!--Map-->
-        <scene sceneID="r5D-lv-zS5">
+        <!--Map View Controller-->
+        <scene sceneID="iKo-mZ-GKn">
             <objects>
-                <viewController id="TYP-XG-M23" customClass="MapViewController" customModule="GMapsPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tuP-ZX-4ga" customClass="MapViewController" customModule="GMapsPlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6zP-TG-tP1"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cdt-ps-i7e"/>
+                        <viewControllerLayoutGuide type="top" id="Cpd-6d-QV4"/>
+                        <viewControllerLayoutGuide type="bottom" id="S4E-qs-zFk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6Hs-sr-kzd">
+                    <view key="view" contentMode="scaleToFill" id="vwn-Wb-Kb6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="YnT-iO-wIe">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BO2-JI-H9n"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yz3-Jz-EYG"/>
-                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dww-Ah-84L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Co-i4-mFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5190" y="27"/>
+            <point key="canvasLocation" x="5018" y="27"/>
         </scene>
         <!--Places-->
         <scene sceneID="hK9-Pf-QY9">
