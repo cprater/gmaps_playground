@@ -14,6 +14,7 @@
 		DA17F04B1E9C3087001F0CA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA17F04A1E9C3087001F0CA4 /* Assets.xcassets */; };
 		DA17F04E1E9C3087001F0CA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA17F04C1E9C3087001F0CA4 /* LaunchScreen.storyboard */; };
 		DA17F0561E9C30A8001F0CA4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA17F0551E9C30A8001F0CA4 /* Podfile */; };
+		DA4946F71EA16051005915B0 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4946F61EA16051005915B0 /* PlaceTableViewCell.xib */; };
 		DAD18AF01E9C35F800B0674C /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD18AEF1E9C35F800B0674C /* PlaceViewController.swift */; };
 		DAE253FD1E9D41DE008EF079 /* PlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE253FC1E9D41DE008EF079 /* PlaceTableViewController.swift */; };
 		DAE253FF1E9D4240008EF079 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE253FE1E9D4240008EF079 /* Place.swift */; };
@@ -32,6 +33,7 @@
 		DA17F04D1E9C3087001F0CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA17F04F1E9C3087001F0CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA17F0551E9C30A8001F0CA4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		DA4946F61EA16051005915B0 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		DAD18AEF1E9C35F800B0674C /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		DAE253FC1E9D41DE008EF079 /* PlaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceTableViewController.swift; path = ../PlaceTableViewController.swift; sourceTree = "<group>"; };
 		DAE253FE1E9D4240008EF079 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
@@ -89,18 +91,51 @@
 		DA17F0421E9C3087001F0CA4 /* GMapsPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				DA4946F41EA15FF9005915B0 /* Assets */,
+				DA4946F31EA15FF1005915B0 /* Supporting Files */,
+				DA4946F51EA16006005915B0 /* Models */,
+				DA4946F81EA16076005915B0 /* User Interface */,
+			);
+			path = GMapsPlayground;
+			sourceTree = "<group>";
+		};
+		DA4946F31EA15FF1005915B0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				DA17F0431E9C3087001F0CA4 /* AppDelegate.swift */,
+				DA17F04C1E9C3087001F0CA4 /* LaunchScreen.storyboard */,
+				DA17F04F1E9C3087001F0CA4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA4946F41EA15FF9005915B0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DA17F04A1E9C3087001F0CA4 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		DA4946F51EA16006005915B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAE253FE1E9D4240008EF079 /* Place.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DA4946F81EA16076005915B0 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
 				DA17F0451E9C3087001F0CA4 /* MapViewController.swift */,
 				DAD18AEF1E9C35F800B0674C /* PlaceViewController.swift */,
 				DAE253FC1E9D41DE008EF079 /* PlaceTableViewController.swift */,
 				DAE254001E9D60D4008EF079 /* PlaceTableViewCell.swift */,
-				DAE253FE1E9D4240008EF079 /* Place.swift */,
+				DA4946F61EA16051005915B0 /* PlaceTableViewCell.xib */,
 				DA17F0471E9C3087001F0CA4 /* Main.storyboard */,
-				DA17F04A1E9C3087001F0CA4 /* Assets.xcassets */,
-				DA17F04C1E9C3087001F0CA4 /* LaunchScreen.storyboard */,
-				DA17F04F1E9C3087001F0CA4 /* Info.plist */,
 			);
-			path = GMapsPlayground;
+			name = "User Interface";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +204,7 @@
 				DA17F04E1E9C3087001F0CA4 /* LaunchScreen.storyboard in Resources */,
 				DA17F04B1E9C3087001F0CA4 /* Assets.xcassets in Resources */,
 				DA17F0561E9C30A8001F0CA4 /* Podfile in Resources */,
+				DA4946F71EA16051005915B0 /* PlaceTableViewCell.xib in Resources */,
 				DA17F0491E9C3087001F0CA4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -63,14 +63,13 @@
                                 <state key="normal" title="View">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Sv9-I8-jMX" kind="presentation" identifier="showPlaceMap" id="tCa-ix-xXh"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Place" id="jLQ-TT-CX0"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="latTextField" destination="hkG-9Y-8pY" id="rq2-k8-WFx"/>
                         <outlet property="longTextField" destination="pvI-IN-vHt" id="we1-Wc-xKr"/>
@@ -79,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528.8000000000002" y="29.23538230884558"/>
+            <point key="canvasLocation" x="4407.1999999999998" y="29.23538230884558"/>
         </scene>
         <!--Map-->
         <scene sceneID="r5D-lv-zS5">
@@ -101,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dww-Ah-84L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4207.1999999999998" y="34.632683658170919"/>
+            <point key="canvasLocation" x="6085.6000000000004" y="34.632683658170919"/>
         </scene>
         <!--Places-->
         <scene sceneID="hK9-Pf-QY9">
@@ -111,73 +110,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceTableViewCell" rowHeight="90" id="LXn-kj-Sjf" customClass="PlaceTableViewCell" customModule="GMapsPlayground" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LXn-kj-Sjf" id="ygA-H1-uHH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qW-5Y-3sy">
-                                            <rect key="frame" x="8" y="8" width="128" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiY-3t-BKd">
-                                            <rect key="frame" x="8" y="57" width="128" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWb-JG-WfB">
-                                            <rect key="frame" x="8" y="32" width="128" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="latLabelField" destination="dWb-JG-WfB" id="6iZ-F6-7eA"/>
-                                    <outlet property="lonLabelField" destination="FiY-3t-BKd" id="kLI-ug-Pe4"/>
-                                    <outlet property="nameLabelField" destination="9qW-5Y-3sy" id="BDG-Zg-g1Z"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showPlaceDetail" id="3wz-y5-Eof"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="o00-Jl-QLx" id="6kt-eY-rRY"/>
                             <outlet property="delegate" destination="o00-Jl-QLx" id="tz2-9A-24n"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Places" id="00c-c7-wD9"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showPlaceDetail" id="biY-CP-mZB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ka-m6-znv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="28.335832083958024"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ODl-Ub-z8o">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sv9-I8-jMX" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vav-SM-lIC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="TYP-XG-M23" kind="relationship" relationship="rootViewController" id="Huk-fK-qGV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PCb-n6-fkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3359.1999999999998" y="34.632683658170919"/>
+            <point key="canvasLocation" x="3447" y="29"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="69E-4Z-SEL">
@@ -195,7 +140,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igY-No-bc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="28"/>
+            <point key="canvasLocation" x="2655" y="28"/>
         </scene>
     </scenes>
 </document>

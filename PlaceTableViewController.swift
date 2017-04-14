@@ -18,6 +18,10 @@ class PlaceTableViewController: UITableViewController {
         // Load sample places
         loadSamplePlaces()
         
+        // Register Table Cell nib
+        tableView.register(UINib(nibName: "PlaceTableViewCell", bundle: nil), forCellReuseIdentifier: "PlaceTableViewCell")
+
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -45,13 +49,15 @@ class PlaceTableViewController: UITableViewController {
             fatalError("Dequed cell is not an instance of PlaceTableViewCell")
         }
         
-        let place = places[indexPath.row]
+        cell.place = places[indexPath.row]
         
-        cell.nameLabelField.text = place.name
-        cell.latLabelField.text = String(place.latitude)
-        cell.lonLabelField.text = String(place.longitude)
-
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = places[indexPath.row]
+        
+        self.performSegue(withIdentifier: "showPlaceDetail", sender: cell)
     }
 
     /*
@@ -100,16 +106,11 @@ class PlaceTableViewController: UITableViewController {
                 guard let placeDetailViewController = segue.destination as? PlaceViewController else {
                     fatalError("Unexpected destination: \(segue.destination)")
                 }
-            
-                guard let selectedPlaceCell = sender as? PlaceTableViewCell else {
+                
+                guard let selectedPlace = sender as? Place else {
                     fatalError("Unexpected sender: \(sender)")
                 }
             
-                guard let indexPath = tableView.indexPath(for: selectedPlaceCell) else {
-                    fatalError("The selected cell is not being displayed by the table")
-                }
-            
-                let selectedPlace = places[indexPath.row]
                 placeDetailViewController.place = selectedPlace
             default:
                 fatalError("Unexpected Segue identifier; \(segue.identifier)")
