@@ -7,26 +7,41 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class PlaceTableViewController: UITableViewController {
+class PlaceTableViewController: UITableViewController, CLLocationManagerDelegate {
     //MARK: Properties
     var places = [Place]()
+    var currentLat: Double?
+    var currentLon: Double?
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Register Table Cell nib
+        tableView.register(UINib(nibName: "PlaceTableViewCell", bundle: nil), forCellReuseIdentifier: "PlaceTableViewCell")
         
         // Load sample places
         loadSamplePlaces()
         
-        // Register Table Cell nib
-        tableView.register(UINib(nibName: "PlaceTableViewCell", bundle: nil), forCellReuseIdentifier: "PlaceTableViewCell")
-
+        // Init Location Services
+        initLocationManager()
+    }
+    
+    // MARK: CLLocation delegates
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        currentLat = locValue.latitude
+        currentLon = locValue.longitude
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        updatePlacesDistance()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +64,8 @@ class PlaceTableViewController: UITableViewController {
             fatalError("Dequed cell is not an instance of PlaceTableViewCell")
         }
         
+        print("setup cell")
+        
         cell.place = places[indexPath.row]
         
         return cell
@@ -60,44 +77,7 @@ class PlaceTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "showPlaceDetail", sender: cell)
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -124,5 +104,35 @@ class PlaceTableViewController: UITableViewController {
         let place3 = Place(name: "Fort Worth", latitude: 32.75, longitude: -97.33)
         
         places += [place1, place2, place3]
+    }
+    
+    private func initLocationManager() {
+        // Core Location setup
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startMonitoringSignificantLocationChanges()
+        }
+        
+        locationManager.requestLocation()
+    }
+    
+    private func updatePlacesDistance() {
+        let currentLocation = CLLocation(latitude: currentLat!, longitude: currentLon!)
+        
+        for place in places {
+            let placeLocation = CLLocation(latitude: place.latitude, longitude: place.longitude)
+            let distance = currentLocation.distance(from: placeLocation)
+            
+            print("setup distance \(distance / 1609)")
+            
+            place.distance = distance / 1609
+        }
     }
 }

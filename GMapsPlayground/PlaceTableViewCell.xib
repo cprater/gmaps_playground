@@ -25,15 +25,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQy-oA-wT5">
-                        <rect key="frame" x="8" y="22" width="104" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDD-Lr-QYx">
-                        <rect key="frame" x="120" y="19" width="107" height="26"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Miles away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQl-Sh-YEv">
+                        <rect key="frame" x="8" y="22" width="359" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -42,11 +35,10 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="latLabelField" destination="HQy-oA-wT5" id="GEo-7Q-KMa"/>
-                <outlet property="lonLabelField" destination="lDD-Lr-QYx" id="8fO-P3-fY6"/>
+                <outlet property="distanceLabelField" destination="NQl-Sh-YEv" id="XDW-Hl-QJR"/>
                 <outlet property="nameLabelField" destination="DGb-WY-MCZ" id="Acn-tF-3qW"/>
             </connections>
-            <point key="canvasLocation" x="-823" y="-198"/>
+            <point key="canvasLocation" x="-823.5" y="-198"/>
         </tableViewCell>
     </objects>
 </document>

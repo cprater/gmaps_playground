@@ -13,6 +13,7 @@ class Place {
     var name: String = ""
     var latitude: Double = 0.0
     var longitude: Double = 0.0
+    var distance: Double = 0.0
     
     init(name: String, latitude: Double, longitude: Double) {
         self.name = name

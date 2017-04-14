@@ -17,8 +17,7 @@ class PlaceTableViewCell: UITableViewCell {
     }
     
     @IBOutlet weak var nameLabelField: UILabel!
-    @IBOutlet weak var latLabelField: UILabel!
-    @IBOutlet weak var lonLabelField: UILabel!
+    @IBOutlet weak var distanceLabelField: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,7 +33,6 @@ class PlaceTableViewCell: UITableViewCell {
     // MARK: Private methods
     private func updateView() {
         nameLabelField.text = place!.name
-        latLabelField.text = String(place!.latitude)
-        lonLabelField.text = String(place!.longitude)
+        distanceLabelField.text = "\(String(place!.distance)) miles away"
     }
 }

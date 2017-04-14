@@ -12,8 +12,8 @@ class PlaceViewController: UIViewController {
     //MARK: Properties
     var place: Place?
     
-    @IBOutlet weak var latTextField: UITextField!
-    @IBOutlet weak var longTextField: UITextField!
+    @IBOutlet weak var latTextField: UITextField! 
+    @IBOutlet weak var longTextField: UITextField! 
     @IBOutlet weak var placeNameLabel: UILabel!
 
     override func viewDidLoad() {
