@@ -120,8 +120,8 @@ class PlaceTableViewController: UITableViewController {
     //MARK: Private methods
     private func loadSamplePlaces() {
         let place1 = Place(name: "Sydney", latitude: -33.86, longitude: 151.20)
-        let place2 = Place(name: "Somewhere", latitude: -45.66, longitude: 202.23)
-        let place3 = Place(name: "Another place", latitude: 33.86, longitude: -123.33)
+        let place2 = Place(name: "Boulder", latitude: 40.04, longitude: -105.27)
+        let place3 = Place(name: "Fort Worth", latitude: 32.75, longitude: -97.33)
         
         places += [place1, place2, place3]
     }

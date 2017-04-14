@@ -30,15 +30,23 @@ class PlaceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: Actions
+    @IBAction func showMapView(_ sender: UIButton) {
+        performSegue(withIdentifier: "showMapDetail", sender: sender)
     }
-    */
+    
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "showMapDetail" {
+            guard let mapDetailViewController = segue.destination as? MapViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            mapDetailViewController.place = place
+        }
+    }
 
 }
