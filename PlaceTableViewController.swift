@@ -24,26 +24,8 @@ class PlaceTableViewController: UITableViewController, CLLocationManagerDelegate
         
         // Load sample places
         loadSamplePlaces()
-        
-        // Init Location Services
-        initLocationManager()
     }
     
-    // MARK: CLLocation delegates
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        
-        currentLat = locValue.latitude
-        currentLon = locValue.longitude
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        
-        updatePlacesDistance()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -104,35 +86,20 @@ class PlaceTableViewController: UITableViewController, CLLocationManagerDelegate
         let place3 = Place(name: "Fort Worth", latitude: 32.75, longitude: -97.33)
         
         places += [place1, place2, place3]
-    }
-    
-    private func initLocationManager() {
-        // Core Location setup
-        // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
         
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startMonitoringSignificantLocationChanges()
-        }
-        
-        locationManager.requestLocation()
+        updatePlacesDistance()
     }
     
     private func updatePlacesDistance() {
-        let currentLocation = CLLocation(latitude: currentLat!, longitude: currentLon!)
-        
-        for place in places {
-            let placeLocation = CLLocation(latitude: place.latitude, longitude: place.longitude)
-            let distance = currentLocation.distance(from: placeLocation)
-            
-            print("setup distance \(distance / 1609)")
-            
-            place.distance = distance / 1609
-        }
+//        let currentLocation = LocationService.sharedInstance.currentLocation!
+//        
+//        for place in places {
+//            let placeLocation = CLLocation(latitude: place.latitude, longitude: place.longitude)
+//            let distance = currentLocation.distance(from: placeLocation)
+//            
+//            print("setup distance \(distance / 1609)")
+//            
+//            place.distance = distance / 1609
+//        }
     }
 }

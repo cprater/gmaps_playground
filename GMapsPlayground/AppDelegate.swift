@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Google Maps setup
         GMSServices.provideAPIKey("AIzaSyBM10KVtorLTLGAl-dXigEFG2ujvp3nXnI")
         
+        _ = LocationService.sharedInstance
+        
         return true
     }
 

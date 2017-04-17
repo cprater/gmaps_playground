@@ -14,6 +14,7 @@
 		DA17F04B1E9C3087001F0CA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA17F04A1E9C3087001F0CA4 /* Assets.xcassets */; };
 		DA17F04E1E9C3087001F0CA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA17F04C1E9C3087001F0CA4 /* LaunchScreen.storyboard */; };
 		DA17F0561E9C30A8001F0CA4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA17F0551E9C30A8001F0CA4 /* Podfile */; };
+		DA46E5571EA57F1700CC96A0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46E5561EA57F1700CC96A0 /* LocationService.swift */; };
 		DA4946F71EA16051005915B0 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4946F61EA16051005915B0 /* PlaceTableViewCell.xib */; };
 		DAD18AF01E9C35F800B0674C /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD18AEF1E9C35F800B0674C /* PlaceViewController.swift */; };
 		DAE253FD1E9D41DE008EF079 /* PlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE253FC1E9D41DE008EF079 /* PlaceTableViewController.swift */; };
@@ -33,6 +34,7 @@
 		DA17F04D1E9C3087001F0CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA17F04F1E9C3087001F0CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA17F0551E9C30A8001F0CA4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		DA46E5561EA57F1700CC96A0 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		DA4946F61EA16051005915B0 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		DAD18AEF1E9C35F800B0674C /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		DAE253FC1E9D41DE008EF079 /* PlaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceTableViewController.swift; path = ../PlaceTableViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				DA17F0431E9C3087001F0CA4 /* AppDelegate.swift */,
+				DA46E5561EA57F1700CC96A0 /* LocationService.swift */,
 				DA17F04C1E9C3087001F0CA4 /* LaunchScreen.storyboard */,
 				DA17F04F1E9C3087001F0CA4 /* Info.plist */,
 			);
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA46E5571EA57F1700CC96A0 /* LocationService.swift in Sources */,
 				DAD18AF01E9C35F800B0674C /* PlaceViewController.swift in Sources */,
 				DA17F0461E9C3087001F0CA4 /* MapViewController.swift in Sources */,
 				DAE253FD1E9D41DE008EF079 /* PlaceTableViewController.swift in Sources */,
